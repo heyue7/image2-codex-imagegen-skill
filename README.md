@@ -23,7 +23,7 @@ This skill documents a practical fallback workflow for image generation from Cla
 Check Codex availability:
 
 ```bash
-node "/Users/lirui/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs" setup --json "check codex image generation availability"
+node "~/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs" setup --json "check codex image generation availability"
 ```
 
 If Codex is not authenticated, run:
