@@ -40,7 +40,14 @@ Do not use this for:
 1. Ensure Codex is available and authenticated:
 
 ```bash
-node "/Users/lirui/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs" setup --json "check codex image generation availability"
+codex --version
+codex login status
+```
+
+If your Codex CLI does not support `login status`, run a small non-interactive check instead:
+
+```bash
+codex exec --skip-git-repo-check "Reply with: Codex is available."
 ```
 
 2. Resolve the output destination before running Codex:
@@ -78,7 +85,7 @@ Codex may load its own `imagegen` skill and use the built-in image tool, then co
 into the resolved destination path, for example:
 
 ```text
-/Users/lirui/YQKJ/independent-station/fig/anime-fashion-cafe-portrait.png
+PROJECT/fig/anime-fashion-cafe-portrait.png
 ```
 
 This path does not depend on the Claude-side `gpt-image` CLI or a custom OpenAI-compatible `base_url`.

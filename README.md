@@ -20,16 +20,22 @@ This skill documents a practical fallback workflow for image generation from Cla
 - Claude Code Codex plugin installed/enabled
 - A Codex runtime that supports the built-in `imagegen` skill
 
-Check Codex availability:
+Check Codex CLI availability:
 
 ```bash
-node "~/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs" setup --json "check codex image generation availability"
+codex --version
 ```
 
-If Codex is not authenticated, run:
+Check authentication:
 
 ```bash
-codex login
+codex login status
+```
+
+If your Codex CLI does not support `login status`, run a small non-interactive check instead:
+
+```bash
+codex exec --skip-git-repo-check "Reply with: Codex is available."
 ```
 
 ## Skill name
